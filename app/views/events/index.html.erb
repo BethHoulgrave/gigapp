@@ -9,34 +9,22 @@
   <h3>Section 1</h3>
   <div>
     <div id="inner">
-<!--           <ul>
-            <li>Date</li>
-            <li>Band</li>
-            <li>Sound clip</li>
-            <li>Image link</li>
-            <li>Ticket price</li>
-            <li>Ticket link</li>
-            <li>Time</li>
-            <li>Category</li>
-            <li>Venue</li>
-          </ul> -->
-
-        <% @events.each do |event| %>
-          <ul>
-            <li><%= event.date %></li>
-            <li><%= event.band %></li>
-            <li><%= event.sound_clip %></li>
-            <li><%= event.image_link %></li>
-            <li><%= event.ticket_price %></li>
-            <li><%= event.ticket_link %></li>
-            <li><%= event.time %></li>
-            <li><%= event.category_id %></li>
-            <li><%= event.user_id %></li>
-            <li><%= link_to 'Show', event %></li>
-            <li><%= link_to 'Edit', edit_event_path(event) %></li>
-            <li><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-          </ul>
-        <% end %>
+      <% @events.each do |event| %>
+        <ul>
+          <li><%= event.date %></li>
+          <li><%= event.band %></li>
+          <li><%= event.sound_clip %></li>
+          <li><%= event.image_link %></li>
+          <li><%= event.ticket_price %></li>
+          <li><%= event.ticket_link %></li>
+          <li><%= event.time %></li>
+          <li><%= event.category_id %></li>
+          <li><%= event.user_id %></li>
+          <li><%= link_to 'Show', event %></li>
+          <li><%= link_to 'Edit', edit_event_path(event) %></li>
+          <li><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+      <% end %>
     </div>
     <div id="inner">
         <p>
