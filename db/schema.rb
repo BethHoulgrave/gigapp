@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(:version => 20141202145520) do
     t.float    "ticket_price"
     t.string   "ticket_link"
     t.string   "time"
-    t.integer  "genre_id"
-    t.integer  "venue_id"
+    t.integer  "category_id"
+    t.integer  "user_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

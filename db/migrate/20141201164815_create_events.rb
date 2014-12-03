@@ -8,8 +8,8 @@ class CreateEvents < ActiveRecord::Migration
       t.float :ticket_price
       t.string :ticket_link
       t.string :time
-      t.integer :genre_id
-      t.integer :venue_id
+      t.integer :category_id
+      t.integer :user_id
 
       t.timestamps
     end

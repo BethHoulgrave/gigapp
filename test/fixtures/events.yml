@@ -8,8 +8,8 @@ one:
   ticket_price: 1.5
   ticket_link: MyString
   time: MyString
-  genre_id: 1
-  venue_id: 1
+  category_id: 1
+  user_id: 1
 
 two:
   date: 2014-12-01
@@ -19,5 +19,5 @@ two:
   ticket_price: 1.5
   ticket_link: MyString
   time: MyString
-  genre_id: 1
-  venue_id: 1
+  category_id: 1
+  user_id: 1
