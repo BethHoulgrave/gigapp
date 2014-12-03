@@ -6,7 +6,8 @@
 <br />
 
 <div id="accordion">
-  <h3>Section 1</h3>
+  <% date = Time.now.strftime("%A %B %Y") %>
+  <h3><%= date %></h3>
   <div>
     <div id="inner">
       <% @events.each do |event| %>
