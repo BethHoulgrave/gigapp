@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  band_name: MyString
+  sound_clip: MyString
+  image_link: MyString
+
+two:
+  band_name: MyString
+  sound_clip: MyString
+  image_link: MyString
