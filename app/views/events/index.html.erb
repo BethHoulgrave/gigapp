@@ -1,15 +1,14 @@
 
 <h1>Listing events</h1>
 
-
-
 <br />
 
 <div id="accordion">
-  <% date = Time.now.strftime("%A %B %Y") %>
-  <h3><%= date %></h3>
+  <% day = Time.now.strftime("%A %B %Y") %>
+  <h3><%= day %></h3>
   <div>
     <% @events.each do |event| %>
+      <%# if event.date == 20141212 %>
       <div class="inner">
         <ul>
           <li><%= event.date %></li>
@@ -26,21 +25,14 @@
           <li><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></li>
         </ul>
       </div>
+    <%# end %>
     <% end %>
     
-    <div class="inner">
-        <p>
-        Gig 2 blahahahahaha
-        </p>
-    </div>
-    <div class="inner">
-        <p>
-        Gig 3 blahahahahaha
-        </p>
-    </div>
+    
   </div>
-  <h3><%= date+1 %></h3>
+  <h3><%= day2 = Date.today+1.day %></h3>
   <div>
+    <%= Event.where(date: day2) %>
     <p>
     Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
     purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor

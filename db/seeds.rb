@@ -24,7 +24,7 @@ category3 = Category.create!(name: "indie-rock")
 
 event1 = Event.create!(band: "Dum Dum Girls", date: 20141212, image_link: "http://www.capturedtracks.com/captured13/wp-content/uploads/dumdum.jpg", ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 6.50, time: "7.30pm")
 
-event2 = Event.create!(band: "Panda Bear", date: 20141212, image_link: "http://media.oregonlive.com/ent_impact_music/photo/panda-bear-thumb-470x587jpg-3a9fdeafa75ce954.jpg", ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 4.50, time: "6.30pm")
+event2 = Event.create!(band: "Panda Bear", date: 20141205, image_link: "http://media.oregonlive.com/ent_impact_music/photo/panda-bear-thumb-470x587jpg-3a9fdeafa75ce954.jpg", ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 4.50, time: "6.30pm")
 
 event3 = Event.create!(band: "Dark Dark Dark", date: 20141212, image_link: "http://www.brightonnoise.co.uk/wp-content/uploads/2013/06/ddd_2.jpg", ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 6.99, time: "7.00")
 
