@@ -9,15 +9,15 @@
   <% date = Time.now.strftime("%A %B %Y") %>
   <h3><%= date %></h3>
   <div>
-    <div class="inner">
-      <% @events.each do |event| %>
+    <% @events.each do |event| %>
+      <div class="inner">
         <ul>
           <li><%= event.date %></li>
           <li><%= event.band %></li>
           <li><%= event.sound_clip %></li>
-          <li><%= event.image_link %></li>
+          <li><img src="<%= event.image_link %>"></li>
           <li><%= event.ticket_price %></li>
-          <li><%= event.ticket_link %></li>
+          <li><a href="<%= event.ticket_link %>">Buy Tickets</a></li>
           <li><%= event.time %></li>
           <li><%= event.category_id %></li>
           <li><%= event.user_id %></li>
@@ -25,8 +25,9 @@
           <li><%= link_to 'Edit', edit_event_path(event) %></li>
           <li><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></li>
         </ul>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+    
     <div class="inner">
         <p>
         Gig 2 blahahahahaha
