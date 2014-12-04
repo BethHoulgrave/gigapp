@@ -13,10 +13,10 @@
       <div class="inner">
         <ul>
           <li><%= event.date %></li>
-          <li><%= event.band %></li>
+          <li><h4><%= event.band %></h4></li>
           <li><%= event.sound_clip %></li>
           <li><img src="<%= event.image_link %>"></li>
-          <li><%= event.ticket_price %></li>
+          <li>£<%= event.ticket_price %></li>
           <li><a href="<%= event.ticket_link %>">Buy Tickets</a></li>
           <li><%= event.time %></li>
           <li><%= event.category_id %></li>
@@ -39,7 +39,7 @@
         </p>
     </div>
   </div>
-  <h3>Section 2</h3>
+  <h3><%= date+1 %></h3>
   <div>
     <p>
     Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
