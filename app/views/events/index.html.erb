@@ -9,7 +9,7 @@
   <% date = Time.now.strftime("%A %B %Y") %>
   <h3><%= date %></h3>
   <div>
-    <div id="inner">
+    <div class="inner">
       <% @events.each do |event| %>
         <ul>
           <li><%= event.date %></li>
@@ -27,12 +27,12 @@
         </ul>
       <% end %>
     </div>
-    <div id="inner">
+    <div class="inner">
         <p>
         Gig 2 blahahahahaha
         </p>
     </div>
-    <div id="inner">
+    <div class="inner">
         <p>
         Gig 3 blahahahahaha
         </p>

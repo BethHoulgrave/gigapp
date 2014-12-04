@@ -1,3 +1,17 @@
+.inner {
+  border-style: solid;
+  border-width: 1px;
+  border-color: green;
+  background-color: red;
+  border-radius: 20px;
+}
+
+h3{
+  font-size: 14px;
+}
+
 ul li{
-  color: red;
+  color: blue;
+  font-family: helvetica;
+  list-style: none;
 }
