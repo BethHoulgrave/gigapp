@@ -11,12 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141205101942) do
-
-  create_table "band_events", :id => false, :force => true do |t|
-    t.integer "event_id"
-    t.integer "band_id"
-  end
+ActiveRecord::Schema.define(:version => 20141205154856) do
 
   create_table "bands", :force => true do |t|
     t.string   "band_name"
@@ -25,6 +20,11 @@ ActiveRecord::Schema.define(:version => 20141205101942) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "band_image"
+  end
+
+  create_table "bands_events", :id => false, :force => true do |t|
+    t.integer "event_id"
+    t.integer "band_id"
   end
 
   create_table "categories", :force => true do |t|
