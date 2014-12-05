@@ -5,10 +5,13 @@
   <%= @event.date %>
 </p>
 
-<p>
-  <b>Band:</b>
-  <%= @event.band %>
-</p>
+<ol>
+  <b>Bandname:</b>
+  <% for band in @event.bands %>
+    <li>
+      <%=h band.band_name %>
+    </li>
+</ol>
 
 <p>
   <b>Sound clip:</b>

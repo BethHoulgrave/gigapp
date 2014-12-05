@@ -4,7 +4,6 @@ class CreateBandEvents < ActiveRecord::Migration
       t.integer :event_id
       t.integer :band_id
 
-      t.timestamps
     end
   end
 end

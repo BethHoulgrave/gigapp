@@ -15,18 +15,9 @@
     <%= f.label :date %><br />
     <%= f.date_select :date %>
   </div>
-  <div class="field">
-    <%= f.label :band %><br />
-    <%= f.text_field :band %>
-  </div>
-  <div class="field">
-    <%= f.label :sound_clip %><br />
-    <%= f.text_field :sound_clip %>
-  </div>
-  <div class="field">
-    <%= f.label :image_link %><br />
-    <%= f.text_field :image_link %>
-  </div>
+    <%= f.fields_for :bands do |builder| %>
+      <%= render 'bandform', :f => builder %>
+    <% end %>
   <div class="field">
     <%= f.label :ticket_price %><br />
     <%= f.text_field :ticket_price %>

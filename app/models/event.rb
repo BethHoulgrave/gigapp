@@ -3,4 +3,6 @@ class Event < ActiveRecord::Base
 
   belongs_to :user
   has_and_belongs_to_many :categories
+  has_and_belongs_to_many :bands
+  accepts_nested_attributes_for :bands, :reject_if => lambda { |a| a[:band_name].blank? }, :allow_destroy => true
 end

@@ -16,6 +16,8 @@ gem 'binding_of_caller'
 gem 'meta_request'
 gem 'devise'
 
+gem 'carrierwave', '0.9.0'
+
 
 
 # Gems used only for assets and not required
