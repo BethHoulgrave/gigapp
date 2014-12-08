@@ -6,23 +6,21 @@
 </p>
 
 <ol>
-  <b>Bandname:</b>
   <% for band in @event.bands %>
+  <b>Bandname:</b>
     <li>
       <%=h band.band_name %>
     </li>
+  <b>Image link:</b>
+    <li>
+      <%=h band.image_link %>
+    </li>
+  <b>Sound clip:</b>
+    <li>
+      <%=h band.sound_clip %>
+    </li>
   <% end %>
 </ol>
-
-<p>
-  <b>Sound clip:</b>
-  <%= @event.sound_clip %>
-</p>
-
-<p>
-  <b>Image link:</b>
-  <%= @event.image_link %>
-</p>
 
 <p>
   <b>Ticket price:</b>

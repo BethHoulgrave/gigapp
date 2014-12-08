@@ -15,3 +15,9 @@
 //= require twitter/bootstrap
 //= require angular-route-1-2-26
 //= require_tree .
+
+
+function remove_bandfields (link) {
+  $(link).previous("input[type=hidden]").value = "1";
+  $(link).up(".bandfields").hide();
+}

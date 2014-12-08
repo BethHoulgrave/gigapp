@@ -1,6 +1,14 @@
-<p>
-  <%= f.label :band_name, "Bandname" %><br />
-  <%= f.text_field :band_name %><br />
-  <%= f.check_box :_destroy %>
-  <%= f.label :_destroy, "Remove band" %>
+<div class="bandfields">
+  <p>
+    <%= f.label :band_name, "Bandname" %><br />
+    <%= f.text_field :band_name %><br /> 
+
+    <%= f.label :image_link, "Image link" %><br />
+    <%= f.text_field :image_link %><br /> 
+
+    <%= f.label :sound_clip, "Sound clip" %><br />
+    <%= f.text_field :sound_clip %><br />
+
+    <%= link_to_remove_bandfields "remove", f %>
 </p>
+</div>
