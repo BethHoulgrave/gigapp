@@ -13,11 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require angular-route-1-2-26
+//= require angular-routes-1-2-26
 //= require_tree .
 
+  function remove_fields(link) {
+    $(link).prev("input[type=hidden]").value = "1";
+    $(link).closest(".fields").hide();
+  }
 
-function remove_bandfields (link) {
-  $(link).previous("input[type=hidden]").value = "1";
-  $(link).up(".bandfields").hide();
-}
+  function add_fields(link, association, content) {
+    var new_id = new Date().getTime();
+    var regexp = new RegExp("new_" + association, "g")
+    $(content.replace(regexp, new_id)).insertBefore($(link).parent());
+    // console.log('addFields');
+  }
+

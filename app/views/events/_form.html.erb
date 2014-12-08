@@ -16,8 +16,9 @@
     <%= f.date_select :date %>
   </div>
     <%= f.fields_for :bands do |builder| %>
-      <%= render 'bandform', :f => builder %>
+      <%= render 'band_fields', :f => builder %>
     <% end %>
+  <p><%= link_to_add_fields "Add band", f, :bands %></p>
   <div class="field">
     <%= f.label :ticket_price %><br />
     <%= f.text_field :ticket_price %>
