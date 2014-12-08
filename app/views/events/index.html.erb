@@ -12,15 +12,16 @@
       <div class="inner">
         <ul>
           <li><%= event.date %></li>
-          <div>
+          <div class="banddiv">
             <% for band in event.bands %>
             <b>Bandname:</b>
               <li>
-                <%=h band.band_name %>
+                <img
+                <%=h band.band_name %>>
               </li>
             <b>Image link:</b>
               <li>
-                <%=h band.image_link %>
+                <%=image_tag band.band_image %>
               </li>
             <b>Sound clip:</b>
               <li>
