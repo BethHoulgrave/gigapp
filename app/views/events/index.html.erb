@@ -12,9 +12,22 @@
       <div class="inner">
         <ul>
           <li><%= event.date %></li>
-          <li><h4><%= event.band %></h4></li>
-          <li><%= event.sound_clip %></li>
-          <li><img src="<%= event.image_link %>"></li>
+          <div>
+            <% for band in event.bands %>
+            <b>Bandname:</b>
+              <li>
+                <%=h band.band_name %>
+              </li>
+            <b>Image link:</b>
+              <li>
+                <%=h band.image_link %>
+              </li>
+            <b>Sound clip:</b>
+              <li>
+                <%=h band.sound_clip %>
+              </li>
+            <% end %>
+          </div>
           <li>£<%= event.ticket_price %></li>
           <li><a href="<%= event.ticket_link %>">Buy Tickets</a></li>
           <li><%= event.time %></li>
