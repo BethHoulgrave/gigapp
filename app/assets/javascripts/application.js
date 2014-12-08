@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require angular-routes-1-2-26
+//= require bootstrap-sprockets
 //= require_tree .
 
   function remove_fields(link) {
