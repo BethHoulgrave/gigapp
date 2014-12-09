@@ -99,6 +99,7 @@ h1 {
   border-radius: 20px;
   padding: 10px;
   margin: 0;
+  color: black;
 }
 
 .inner h3{
@@ -111,10 +112,19 @@ h1 {
   color: black;
 }
 
+.inner li{
+  color: black;
+  font-weight: bold;
+}
+
 .inner li audio{
   width: 45px;
   background-color: transparent;
+}
 
+.inner a {
+  text-decoration: underline;
+  font-weight: normal;
 }
 
 ul li{
@@ -136,4 +146,28 @@ ul li a{
 .banddiv img {
 width: 100px;
 height: auto;
+}
+
+.form {
+  background-color: gray;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.field {
+  color: black;
+  background-color: gray;
+}
+
+.fields {
+  color: black;
+  background-color: #CFCFCF;
+  text-align: left; 
+  padding: 5px;
+}
+
+
+.fields input{
+
 }
