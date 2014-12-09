@@ -29,14 +29,14 @@ u3 = User.create!(email: "info@theoldbluelast.com", password: "password", name: 
 
 # :email, :password, :password_confirmation, :remember_me, :name, :address, :coordinates, :website, :profile_image, :description
 
-e1 = Event.create!(band: "Dum Dum Girls", date: 20141212, ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 6.50, time: "7.30pm", category_id: c1.id)
+e1 = Event.create!(band: "Dum Dum Girls", date: 20141212, ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 6.50, time: "7.30pm", category_id: c1.id, user_id: u1.id)
 
-e2 = Event.create!(band: "Panda Bear", date: 20141205, ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 4.50, time: "6.30pm", category_id: c2.id)
+e2 = Event.create!(band: "Panda Bear", date: 20141205, ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 4.50, time: "6.30pm", category_id: c2.id, user_id: u1.id)
 
-e3 = Event.create!(band: "Dark Dark Dark", date: 20141212, ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 6.99, time: "7.00", category_id: c3.id)
+e3 = Event.create!(band: "Dark Dark Dark", date: 20141212, ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 6.99, time: "7.00", category_id: c3.id, user_id: u2.id)
 
-e4 = Event.create!(band: "Beach House", date: 20141213, ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 9.99, time: "7.00", category_id: c2.id)
+e4 = Event.create!(band: "Beach House", date: 20141213, ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 9.99, time: "7.00", category_id: c2.id, user_id: u3.id)
 
-e5 = Event.create!(band: "Pulp", date: 20141213, ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 15.00, time: "7.00", category_id: c1.id)
+e5 = Event.create!(band: "Pulp", date: 20141213, ticket_link: "http://www.ticketmaster.co.uk/", ticket_price: 15.00, time: "7.00", category_id: c1.id, user_id: u2.id)
 
 # band: "", date: "", category_id: , image_link: "", sound_clip: "", ticket_link: "", ticket_price: "", time: "", user_id
