@@ -1,50 +1,73 @@
-<% content_for :center do %>
+<div class="row">
   <h1>Listing events</h1>
+
   <br />
-  <div id="accordion">
-    <% day = Time.now.strftime("%A %B %Y") %>
-    <h3><%= day %></h3>
-    <div class="outer">
-      <% @events.each do |event| %>
-        
-        <% if event.date == Date.today %>
+
+  <div id="accordion" class="col-md-2-offset">
+    <% @events.each do | date, events | %>
+      <h3><%= date %> </h3>
+      <div>
+      <% events.each do |event| puts%>
         <div class="inner">
-          <ul>
-            <li><%= event.date %></li>
-            <div class="banddiv">
-              <% for band in event.bands %>
-                <b>Bandname:</b>
-                <li>
-                  <img<%=h band.band_name %>>
-                </li>
-                <b>Image link:</b>
-                <li>
-                  <%=image_tag band.band_image %>
-                </li>
-                <b>Sound clip:</b>
-                <li>
-                  <%=audio_tag band.audio_file, controls: true %>
-                </li>
-              <% end %>
-              <% end %>
-            </div>
-            <li>£<%= event.ticket_price %></li>
-            <li><a href="<%= event.ticket_link %>">Buy Tickets</a></li>
-            <li><%= event.time %></li>
-<!--             <li><%#= event.category_id %></li>
-            <li><%#= event.user_id %></li> -->
-            <li><%= link_to 'Show', event %></li>
-            <li><%= link_to 'Edit', edit_event_path(event) %></li>
-            <li><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-          </ul>
+          <%=event.inspect%>
         </div>
       <% end %>
     </div>
+    <% end %> 
+  </div>
 
-    <h3><% day2 = Date.today+1.day %></h3>
-    <h3><%= Date.tomorrow %></h3>
-    <div>
-      <%= Event.where(date: day2) %>
+  <%= link_to 'New Event', new_event_path %>
+</div>
+
+
+
+<%# content_for :center do %>
+  <!-- <h1>Listing events</h1> -->
+  <!-- <br /> -->
+  <!-- <div id="accordion"> -->
+    <%# day = Time.now.strftime("%A %B %Y") %>
+    <!-- <h3><%#= day %></h3> -->
+    <!-- <div class="outer"> -->
+      <%# @events.each do |event| %>
+        
+        <%# if event.date == Date.today %>
+        <!-- <div class="inner"> -->
+          <!-- <ul> -->
+            <!-- <li><%#= event.date %></li> -->
+            <!-- <div class="banddiv"> -->
+              <%# for band in event.bands %>
+                <!-- <b>Bandname:</b> -->
+                <!-- <li> -->
+                  <!-- <img<%#=h band.band_name %>> -->
+                <!-- </li> -->
+                <!-- <b>Image link:</b> -->
+                <!-- <li> -->
+                  <%#=image_tag band.band_image %>
+                <!-- </li> -->
+                <!-- <b>Sound clip:</b> -->
+                <!-- <li> -->
+                  <%#=audio_tag band.audio_file, controls: true %>
+                <!-- </li> -->
+              <%# end %>
+              <%# end %>
+            <!-- </div> -->
+            <!-- <li>£<%#= event.ticket_price %></li> -->
+            <!-- <li><a href="<%#= event.ticket_link %>">Buy Tickets</a></li> -->
+            <!-- <li><%#= event.time %></li> -->
+<!--             <li><%#= event.category_id %></li>
+            <li><%#= event.user_id %></li> -->
+            <!-- <li><%#= link_to 'Show', event %></li> -->
+            <!-- <li><%#= link_to 'Edit', edit_event_path(event) %></li> -->
+            <!-- <li><%#= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></li> -->
+          <!-- </ul> -->
+        <!-- </div> -->
+      <!-- <%# end %> -->
+    <!-- </div> -->
+
+    <!-- <h3><%# day2 = Date.today+1.day %></h3> -->
+    <!-- <h3><%#= Date.tomorrow %></h3> -->
+    <!-- <div> -->
+      <%#= Event.where(date: day2) %>
 <!--         <p>
       Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
       purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
@@ -80,8 +103,8 @@
       inceptos himenaeos.
       </p>
     </div> -->
-    </div>
+    <!-- </div> -->
 
-    <%= link_to 'New Event', new_event_path %>
-  </div>
-<% end %>
+    <%#= link_to 'New Event', new_event_path %>
+  <!-- </div> -->
+<%# end %>
