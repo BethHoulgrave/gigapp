@@ -1,8 +1,12 @@
 GigApp::Application.routes.draw do
   devise_for :users
-
+  devise_scope :user do
+    get 'users/:id' => 'users#show'
+  end
+  # resources :users, :only=>[:show]
   resources :events
 
+  # get 'users/:id' => 'users#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
