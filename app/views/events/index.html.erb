@@ -1,53 +1,51 @@
-<div class="row">
+<% content_for :center do %>
   <h1>Listing events</h1>
-
   <br />
-
-  <div id="accordion" class="col-md-2-offset">
+  <div id="accordion">
     <% day = Time.now.strftime("%A %B %Y") %>
     <h3><%= day %></h3>
-    <div>
+    <div class="outer">
       <% @events.each do |event| %>
-        <%# if event.date == 20141212 %>
+        
+        <% if event.date == Date.today %>
         <div class="inner">
           <ul>
             <li><%= event.date %></li>
             <div class="banddiv">
               <% for band in event.bands %>
-              <b>Bandname:</b>
+                <b>Bandname:</b>
                 <li>
-                  <img
-                  <%=h band.band_name %>>
+                  <img<%=h band.band_name %>>
                 </li>
-              <b>Image link:</b>
+                <b>Image link:</b>
                 <li>
                   <%=image_tag band.band_image %>
                 </li>
-              <b>Sound clip:</b>
+                <b>Sound clip:</b>
                 <li>
-                  <%#=audio_tag band.audio_file, controls: true %>
+                  <%=audio_tag band.audio_file, controls: true %>
                 </li>
+              <% end %>
               <% end %>
             </div>
             <li>£<%= event.ticket_price %></li>
             <li><a href="<%= event.ticket_link %>">Buy Tickets</a></li>
             <li><%= event.time %></li>
-            <li><%= event.category_id %></li>
-            <li><%= event.user_id %></li>
+<!--             <li><%#= event.category_id %></li>
+            <li><%#= event.user_id %></li> -->
             <li><%= link_to 'Show', event %></li>
             <li><%= link_to 'Edit', edit_event_path(event) %></li>
             <li><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></li>
           </ul>
         </div>
-      <%# end %>
       <% end %>
-      
-      
     </div>
-    <h3><%= day2 = Date.today+1.day %></h3>
+
+    <h3><% day2 = Date.today+1.day %></h3>
+    <h3><%= Date.tomorrow %></h3>
     <div>
       <%= Event.where(date: day2) %>
-      <p>
+<!--         <p>
       Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
       purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
       velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
@@ -81,9 +79,9 @@
       Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
       inceptos himenaeos.
       </p>
+    </div> -->
     </div>
+
+    <%= link_to 'New Event', new_event_path %>
   </div>
-
-  <%= link_to 'New Event', new_event_path %>
-</div>
-
+<% end %>
