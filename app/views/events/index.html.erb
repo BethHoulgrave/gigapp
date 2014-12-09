@@ -1,4 +1,4 @@
-<div class="row">
+<% content_for :center do %>
   <h1>Listing events</h1>
 
   <br />
@@ -20,22 +20,31 @@
             <li><%= event.category_id %></li>
             <li><%= event.user_id %></li>
 
+            <div id="bandimagecontainer">
+              <%= yield :smallbox %>
+            </div>
+
             <div class="banddiv">
               <% for band in event.bands %>
-                <b>Bandname:</b>
-                <li>
-                  <img<%=h band.band_name %>>
-                </li>
-                <b>Image link:</b>
-                <li>
-                  <%=image_tag band.band_image %>
-                </li>
+                <b>Band:</b>
+                <p>
+                  <%=h band.band_name %>
+                </p>
+                <!-- <li>
+                  <%#=image_tag band.band_image %>
+                </li> -->
                 <b>Sound clip:</b>
                 <li>
                   <%=audio_tag band.audio_file, controls: true %>
                 </li>
+                <% content_for :smallbox do %>
+                <%=image_tag band.band_image %>
+                <% end %>
               <% end %>
             </div>
+
+
+
 
             <li><%= link_to 'Show', event %></li>
             <li><%= link_to 'Edit', edit_event_path(event) %></li>
@@ -49,7 +58,7 @@
   </div>
 
   <%= link_to 'New Event', new_event_path %>
-</div>
+<% end %>
 
 
 
