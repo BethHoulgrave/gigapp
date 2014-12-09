@@ -21,7 +21,7 @@ body {
   height: 200px;
   background-color: white;
   padding: 7px;
-  // justify-content: space-around;
+  display: inline-block;
 }
 
 #bandimagecontainer img {
@@ -162,6 +162,15 @@ ul li img{
 
 ul li a{
 
+}
+
+.banddiv {
+  width:50%;
+  display: inline-block;
+}
+
+.banddiv p{
+  font-weight: bold;
 }
 
 .banddiv img {

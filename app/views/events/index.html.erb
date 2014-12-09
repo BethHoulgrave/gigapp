@@ -11,34 +11,29 @@
         <div class="inner">
           <%#=event.inspect%>
 
-          <ul>
-            <li><%= event.date %></li>
-            <li><%= event.user_id %></li>
-            <li>£<%= event.ticket_price %></li>
-            <li><a href="<%= event.ticket_link %>">Buy Tickets</a></li>
-            <li><%= event.time %></li>
-            <li><%= event.category_id %></li>
-            <li><%= event.user_id %></li>
 
             <div id="bandimagecontainer">
               <%= yield :smallbox %>
             </div>
 
             <div class="banddiv">
-              <% for band in event.bands %>
-                <b>Band:</b>
-                <p>
-                  <%=h band.band_name %>
-                </p>
-                <!-- <li>
-                  <%#=image_tag band.band_image %>
-                </li> -->
-                <b>Sound clip:</b>
-                <li>
+              <ul>
+              <li><%= event.date %></li>
+              <li><%= event.user_id %></li>
+              <li><%= event.time %></li>
+              <li>£<%= event.ticket_price %></li>
+              <li><a href="<%= event.ticket_link %>">Buy Tickets</a></li>
+
+              <li><%= event.category_id %></li>
+                <% for band in event.bands %>
+                  <p>
+                   <%=h band.band_name %>
+                  </p>
+                  <li>
                   <%=audio_tag band.audio_file, controls: true %>
-                </li>
-                <% content_for :smallbox do %>
-                <%=image_tag band.band_image %>
+                  </li>
+                  <% content_for :smallbox do %>
+                  <%=image_tag band.band_image %>
                 <% end %>
               <% end %>
             </div>
