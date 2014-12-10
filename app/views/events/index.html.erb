@@ -12,9 +12,7 @@
           <%#=event.inspect%>
 
 
-            <div id="bandimagecontainer">
-              <%= yield :smallbox %>
-            </div>
+            
 
             <div class="banddiv">
               <ul>
@@ -36,6 +34,9 @@
                   <%=image_tag band.band_image %>
                 <% end %>
               <% end %>
+            </div>
+            <div id="bandimagecontainer">
+              <%= yield :smallbox %>
             </div>
 
 
