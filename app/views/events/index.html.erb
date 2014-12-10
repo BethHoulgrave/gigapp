@@ -47,6 +47,14 @@
                   <li><%= event.category_id %></li>
                 </ul>
               </div>
+
+              <div id="toolbox">
+                <table id="amend">
+                  <td><%= link_to image_tag("show.png"), event %></td>
+                  <td><%= link_to image_tag("edit.png"), edit_event_path(event) %></td>
+                  <td><%= link_to image_tag("destroy.png"), event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </table>
+              </div>
             </div>
 
             <div id="visualiser">
@@ -63,14 +71,6 @@
                     <%=audio_tag s, controls: true %>
                   </div>
                 <% end %>
-            </div>
-
-            <div id="toolbox">
-              <table id="amend">
-                <td><%= link_to image_tag("show.png"), event %></td>
-                <td><%= link_to image_tag("edit.png"), edit_event_path(event) %></td>
-                <td><%= link_to image_tag("destroy.png"), event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </table>
             </div>
 
         </div>

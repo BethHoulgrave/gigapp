@@ -50,6 +50,16 @@ body {
 
 #eventinfo {
   float: left;
+  width: 100%;
+}
+
+#eventinfo ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+#toolbox {
+  float: left;
 }
 
 #visualiser {
@@ -105,9 +115,7 @@ body {
   margin: 0 auto;
 }
 
-#toolbox {
-  float: left;
-}
+
 
 .row {
   width: 100%;
