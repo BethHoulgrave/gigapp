@@ -31,6 +31,27 @@ body {
   background-size:cover;
 }
 
+#visualiser {
+  background-color: white;
+  width: 220px;
+  height: 220px;
+  // padding: 10px;
+}
+
+#single {
+  width: 100px;
+  height: 100px;
+  display: inline;
+  float: left;
+  margin: 5px;
+  background-size: cover;
+}
+
+#single img{
+  width: 100px;
+  height: 100px;
+}
+
 
 .row {
   width: 100%;

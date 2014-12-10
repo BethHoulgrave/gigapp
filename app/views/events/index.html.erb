@@ -15,6 +15,7 @@
             
 
             <div class="banddiv">
+
               <ul>
               <li><%= event.date %></li>
               <li><%= event.user_id %></li>
@@ -23,21 +24,38 @@
               <li><a href="<%= event.ticket_link %>">Buy Tickets</a></li>
 
               <li><%= event.category_id %></li>
+                <% @bandarray = [] %>
                 <% for band in event.bands %>
+                  <% @bandarray.push(band.band_image) %>
                   <p>
                    <%=h band.band_name %>
                   </p>
                   <li>
                   <%=audio_tag band.audio_file, controls: true %>
                   </li>
-                  <% content_for :smallbox do %>
-                  <%=image_tag band.band_image %>
-                <% end %>
+                  <%# content_for :smallbox do %>
+                  <%#=image_tag band.band_image %>
+                <%# end %>
+
+
               <% end %>
             </div>
-            <div id="bandimagecontainer">
-              <%= yield :smallbox %>
+
+            <!-- <div id="bandimagecontainer"> -->
+              <%#= yield :smallbox %>
+            <!-- </div> -->
+            <%# binding.pry %>
+            <%# pry 'debug' %>
+
+            <%# content_for :smallbox do %>
+            <div id="visualiser">
+              <% @bandarray.each do |i| %>
+                  <div id="single">
+                    <%=image_tag i %>
+                  </div>
+                <% end %>
             </div>
+            <%# end %>
 
 
 

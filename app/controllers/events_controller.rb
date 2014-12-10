@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   def index
     events = Event.order(:date)
     @events = events.group_by(&:date)
+    @bandarray = []
 
     respond_to do |format|
       format.html # index.html.erb
