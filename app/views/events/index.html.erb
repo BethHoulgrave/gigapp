@@ -13,7 +13,29 @@
         <div class="inner">
           <%#=event.inspect%>
 
+          <% @bandarray = [] %>
+          <% @musicarray = [] %>
+          <% @lineup = [] %>
+
+          <% for band in event.bands %>
+
+            <% @bandarray.push(band.band_image) %>
+
+            <% @musicarray.push(band.audio_file) %>
+
+            <% @lineup.push(band.band_name) %>
+
+          <% end %>
+
             <div class="banddiv">
+              <div id="lineup">
+                <% @lineup.each do |b| %>
+                    <p>
+                      <%= b %>
+                    <p>
+                  <% end %>
+                  <hr>
+              </div>
               <div id="eventinfo">
                 <ul>
                   <li><%= event.time %></li>
@@ -25,32 +47,6 @@
                   <li><%= event.category_id %></li>
                 </ul>
               </div>
-
-              <% @bandarray = [] %>
-              <% @musicarray = [] %>
-              <% @lineup = [] %>
-
-              <% for band in event.bands %>
-
-                <% @bandarray.push(band.band_image) %>
-
-                <% @musicarray.push(band.audio_file) %>
-
-                <% @lineup.push(band.band_name) %>
-
-                <!-- <p>
-                 <%#=h band.band_name %>
-                </p> -->
-
-              <% end %>
-            </div>
-
-            <div id="lineup">
-              <% @lineup.each do |b| %>
-                  <p>
-                    <%= b %>
-                  <p>
-                <% end %>
             </div>
 
             <div id="visualiser">
