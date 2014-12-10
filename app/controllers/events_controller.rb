@@ -5,6 +5,7 @@ class EventsController < ApplicationController
     events = Event.order(:date)
     @events = events.group_by(&:date)
     @bandarray = []
+    @lineup = []
 
     respond_to do |format|
       format.html # index.html.erb

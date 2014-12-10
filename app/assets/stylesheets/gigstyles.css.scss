@@ -31,15 +31,65 @@ body {
   background-size:cover;
 }
 
+.banddiv {
+  width: 220px;
+  height: 220px;
+  display: inline-block;
+  float: left;
+}
+
+#lineup {
+  float: left;
+
+}
+
+#lineup p {
+  display: inline;
+  margin: 5px;
+}
+
+#eventinfo {
+  float: left;
+}
+
 #visualiser {
   background-color: white;
   width: 220px;
   height: 220px;
   // padding: 10px;
+  position:relative;
+  // bottom:15px;
+  // left:15px;
+  display: inline-block;
+  float: left;
 }
 
-#single {
+#singleimage {
   width: 100px;
+  height: 100px;
+  display: inline-block;
+  float: left;
+  margin: 5px;
+  background-size: cover;
+}
+
+#singleimage img{
+  width: 100px;
+  height: 100px;
+}
+
+#musicbox {
+  background-color: transparent;
+  width: 220px;
+  height: 220px;
+  z-index: +1;
+  // padding: 10px;
+  float: left;
+}
+
+#singleaudio {
+  width: 100px;
+  background-color: transparent;
   height: 100px;
   display: inline;
   float: left;
@@ -47,11 +97,16 @@ body {
   background-size: cover;
 }
 
-#single img{
-  width: 100px;
+#singleaudio audio{
+  width: 45px;
   height: 100px;
+  display: block;
+  margin: 0 auto;
 }
 
+#toolbox {
+  float: left;
+}
 
 .row {
   width: 100%;
@@ -68,56 +123,25 @@ body {
   height: 50px;
 }
 
-.span1#left {
-  margin: 0 auto;
-  width: 14%;
-  background-color: blue;
-  color: black;
-  display: block;
-  float: left;
-  padding: 15px;
-  margin: 2px;
-  border-radius: 20px;
-  text-align: center;
-  min-height: 700px;
-
-}
-
-.span3#center {
-  margin: 0 auto ;
-  width: 45%;
-  background-color: green;
-  color: black;
-  display: block;
-  float: left;
-  padding: 15px;
-  margin: 2px;
-  border-radius: 20px;
-  min-height: 700px;
-
-}
-
-.span2#right {
-  margin: 0 auto;
-  width: 30%;
-  background-color: red;
-  color: black;
-  display: block;
-  float: right;
-  padding: 15px;
-  margin: 2px;
-  border-radius: 20px;
-  min-height: 700px;
-
-}
 
 #accordion {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  background-color: #B9D0EB;
+  // background-color: red; 
 }
 
+#accordion div.ui-accordion-content{
+  background-color: tomato;
+  // height: 1500px;
+  // height: auto;
+  // display: block;
+  // overflow: auto;
+}
+
+#accordion h3.ui-accordion-header{
+  background-color: blue;
+}
 
 h1 {
   text-align: center;
@@ -135,6 +159,7 @@ p {
 
 .inner {
   width:100%;
+  height: 250px;
   border-style: solid;
   border-width: 1px;
   background-color: #C4C8CC;
@@ -185,19 +210,7 @@ ul li a{
 
 }
 
-.banddiv {
-  width:50%;
-  display: inline-block;
-}
 
-.banddiv p{
-  font-weight: bold;
-}
-
-.banddiv img {
-width: 100px;
-height: auto;
-}
 
 #show {
   width: 25px;

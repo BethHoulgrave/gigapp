@@ -14,41 +14,68 @@
           <%#=event.inspect%>
 
             <div class="banddiv">
-              <ul>
-              <li><%= event.date %></li>
-              <li><%= event.user.name %></li>
-              <li><%= event.user.address %></li>
- 
-              <li><%= event.time %></li>
-              <li>£<%= event.ticket_price %></li>
-              <li><a href="<%= event.ticket_link %>">Buy Tickets</a></li>
-              <li><%= event.category_id %></li>
-                <% @bandarray = [] %>
-                <% for band in event.bands %>
-                  <% @bandarray.push(band.band_image) %>
+              <div id="eventinfo">
+                <ul>
+                  <li><%= event.time %></li>
+                  <li><%= event.user.name %></li>
+                  <li><%= event.user.address %></li>
+                  <br />
+                  <li>£<%= event.ticket_price %></li>
+                  <li><a href="<%= event.ticket_link %>">Buy Tickets</a></li>
+                  <li><%= event.category_id %></li>
+                </ul>
+              </div>
+
+              <% @bandarray = [] %>
+              <% @musicarray = [] %>
+              <% @lineup = [] %>
+
+              <% for band in event.bands %>
+
+                <% @bandarray.push(band.band_image) %>
+
+                <% @musicarray.push(band.audio_file) %>
+
+                <% @lineup.push(band.band_name) %>
+
+                <!-- <p>
+                 <%#=h band.band_name %>
+                </p> -->
+
+              <% end %>
+            </div>
+
+            <div id="lineup">
+              <% @lineup.each do |b| %>
                   <p>
-                   <%=h band.band_name %>
-                  </p>
-                  <li>
-                  <%=audio_tag band.audio_file, controls: true %>
-                  </li>
+                    <%= b %>
+                  <p>
                 <% end %>
             </div>
 
             <div id="visualiser">
               <% @bandarray.each do |i| %>
-                  <div id="single">
+                  <div id="singleimage">
                     <%=image_tag i %>
                   </div>
                 <% end %>
             </div>
 
-            <table id="amend">
-              <td><%= link_to image_tag("show.png"), event %></td>
-              <td><%= link_to image_tag("edit.png"), edit_event_path(event) %></td>
-              <td><%= link_to image_tag("destroy.png"), event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </table>
-          </ul>
+            <div id="musicbox">
+              <% @musicarray.each do |s| %>
+                  <div id="singleaudio">
+                    <%=audio_tag s, controls: true %>
+                  </div>
+                <% end %>
+            </div>
+
+            <div id="toolbox">
+              <table id="amend">
+                <td><%= link_to image_tag("show.png"), event %></td>
+                <td><%= link_to image_tag("edit.png"), edit_event_path(event) %></td>
+                <td><%= link_to image_tag("destroy.png"), event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </table>
+            </div>
 
         </div>
       <% end %>
