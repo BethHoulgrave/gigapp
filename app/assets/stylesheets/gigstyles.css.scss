@@ -33,7 +33,7 @@ body {
 }
 
 button {
-  margin: 5px;
+  margin: 10px;
 }
 
 #bandimagecontainer {
@@ -163,6 +163,10 @@ button {
   padding: 10px;
 }
 
+.row h1 {
+  float: bottom;
+}
+
 .user-nav {
   width: 100%;
   height: 50px;
@@ -173,13 +177,33 @@ button {
   color: white;
 }
 
+.userbuttons {
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+  float: right;
+  display: inline-block;
+  clear:  right;
+  margin-right: 82px;
+  margin-top: 50px;
+}
+
+#neweventbutton {
+  margin: 30px;
+}
+
+#calendarbutton {
+  margin: 30px;
+}
+
 
 #accordion {
   width: 50%;
   height: auto;
   display: block;
   margin: 0 auto;
-  margin-top: 190px;
+  margin-top: 0px;
+  border-style: none;
   // background-color: red; 
 }
 
@@ -189,6 +213,7 @@ button {
   // height: auto;
   // display: block;
   // overflow: auto;
+  border-style: none;
 }
 
 #accordion h3.ui-accordion-header{
@@ -214,10 +239,6 @@ b {
 
 p {
   color: black;
-}
-
-button {
-  margin: 10px;
 }
 
 .inner {
