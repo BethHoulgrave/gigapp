@@ -2,7 +2,10 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    events = Event.order(:date)
+    @events = events.group_by(&:date)
+    @bandarray = []
+    @lineup = []
 
     respond_to do |format|
       format.html # index.html.erb
@@ -43,7 +46,6 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(params[:event])
-
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }

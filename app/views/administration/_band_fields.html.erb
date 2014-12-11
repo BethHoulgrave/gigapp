@@ -1,0 +1,13 @@
+  <p>
+    <%= f.label :band_name, "Bandname" %><br />
+    <%= f.text_field :band_name %><br /> 
+
+    <%= f.label :band_image %><br />
+    <%= f.file_field :band_image %><br />
+
+    <%= f.label :audio_file, "Sound clip" %><br />
+    <%= f.file_field :audio_file %><br />
+
+    <%= link_to_remove_fields "remove", f %>
+</p>
+</div>

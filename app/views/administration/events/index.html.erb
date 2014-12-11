@@ -1,0 +1,115 @@
+<% content_for :center do %>
+  <h1><%= current_user.name %>'s Calendar</h1>
+
+  <br />
+  <button><%= link_to 'New Event', new_event_path %></button>
+  <br />
+
+  <button><%= link_to 'All events', events_path %></button>
+  <br />
+
+  <div id="userevents">
+    <% @events.each do | date, events | %>
+      <h3><%= date %> </h3>
+      <div>
+      <% events.each do |event| puts%>
+        <div class="inneradministration">
+          <%#=event.inspect%>
+
+          <% @bandarray = [] %>
+          <% @musicarray = [] %>
+          <% @lineup = [] %>
+
+          <% for band in event.bands %>
+
+            <% @bandarray.push(band.band_image) %>
+
+            <% @musicarray.push(band.audio_file) %>
+
+            <% @lineup.push(band.band_name) %>
+
+          <% end %>
+
+            <div class="banddiv">
+              <div id="lineup">
+                <% @lineup.each do |b| %>
+                    <p>
+                      <%= b %>
+                    <p>
+                  <% end %>
+                  <hr>
+              </div>
+              <div id="eventinfo">
+                <ul>
+                  <li><%= event.time %></li>
+                  <li><%= event.user.name %></li>
+                  <li><%= event.user.address %></li>
+                  <br />
+                  <li>£<%= event.ticket_price %></li>
+                  <li><a href="<%= event.ticket_link %>">Buy Tickets</a></li>
+                  <li><%= event.category_id %></li>
+                </ul>
+              </div>
+
+              <% if user_signed_in? %>
+                <%= render :partial => 'tooltable', locals: {event: event} %>
+              <% end %>
+
+
+            </div>
+
+            <div id="visualiser">
+              <% @bandarray.each do |i| %>
+                  <div id="singleimage">
+                    <%=image_tag i %>
+                  </div>
+                <% end %>
+            </div>
+
+            <div id="musicbox">
+              <% @musicarray.each do |s| %>
+                  <div id="singleaudio">
+                    <%=audio_tag s, controls: true %>
+                  </div>
+                <% end %>
+            </div>
+
+        </div>
+      <% end %>
+    </div>
+    <% end %> 
+  </div>
+
+
+<!-- FORM -->
+
+<!-- <h2>Listing events</h2>
+<%# if current_user.present? %>
+    <div class = "event_form">
+      <p>Bouquet Name:</p>
+      <input type='text' id='bouquet_name'>
+      <p>Bouquet Price:</p>
+      <input type='float' id='price'>
+      <p>Bouquet Description:</p>
+      <input type='text' id='bouquet_description'>
+      <p>Number of Bouquets:</p>
+      <input type='integer' id='number_bouquets'>
+      </br>
+      </br>
+      <input type='submit' value='submit' class='bouquet_submit'>
+    </div>
+  <%# end %>
+<%# end %>
+
+<div id = "listbouquets"></div>
+<br />
+
+<%#= link_to 'New Bouquet', new_bouquet_path %> -->
+
+<!-- FORM END -->
+
+
+
+
+
+<% end %>

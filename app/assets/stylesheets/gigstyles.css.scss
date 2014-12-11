@@ -2,21 +2,213 @@
   margin: 0 auto;
   width: 90%;
 }*/
+
 body {
-  margin-left: 50px;
+  padding: 0px;
+  background-image: url("background_pink.jpg");
+  background-size:cover; 
+}
+
+#container {
+  width: 75%;
+  height: 100%;
+  margin: 0 auto;
+  border-width: 1px;
+  border-style: solid;
+  border-color: gray;
+  background-color: transparent;
+}
+
+#bandimagecontainer {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  padding: 7px;
+  display: inline-block;
+}
+
+#bandimagecontainer img {
+  width: 90px;
+  height: 90px;
+  background-color: blue;
+  background-size:cover;
+}
+
+.banddiv {
+  width: 220px;
+  height: 220px;
+  display: inline-block;
+  float: left;
+  margin-right: 15px;
+  padding: 4px;
+  background-color: transparent;
+}
+
+#lineup {
+  float: left;
+  opacity: 1;
+  text-align: left;
+}
+
+#lineup p {
+  display: inline;
+  margin-left: 8px;
+  font-family: helvetica;
+  color: white;
+  text-align: left;
+}
+
+#lineup hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#eventinfo {
+  float: left;
+  width: 100%;
+}
+
+#eventinfo ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+#toolbox {
+  float: left;
+}
+
+#visualiser {
+  background-color: transparent;
+  width: 220px;
+  height: 220px;
+  // padding: 10px;
+  position:absolute;
+  // bottom:100px;
+  // right:220px;
+  display: inline-block;
+  float: left;
+
+}
+
+#singleimage {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  float: left;
+  margin: 4px;
+  background-color: white;
+  background-size: cover;
+}
+
+#singleimage img{
+  width: 100px;
+  height: 100px;
+}
+
+#musicbox {
+  background-color: transparent;
+  width: 220px;
+  height: 220px;
+  z-index: +1;
+  // padding: 10px;
+  float: left;
+}
+
+#singleaudio {
+  width: 100px;
+  background-color: transparent;
+  height: 100px;
+  display: inline;
+  float: left;
+  margin: 4px;
+  background-size: cover;
+  padding-bottom: 20px;
+  opacity: 50%;
+}
+
+#singleaudio audio{
+  width: 45px;
+  height: 64px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+.row {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: 0;
+  // padding: 5px;
+}
+
+.user-nav {
+  width: 100%;
+  height: 50px;
+}
+
+.user-nav b {
+  color: white;
+}
+
+
+#accordion {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  // background-color: red; 
+}
+
+#accordion div.ui-accordion-content{
+  background-color: transparent;
+  // height: 1500px;
+  // height: auto;
+  // display: block;
+  // overflow: auto;
+}
+
+#accordion h3.ui-accordion-header{
+  background-color: blue;
+}
+
+#userevents {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-color: transparent;
 }
 
 h1 {
   text-align: center;
+  color: #1527A5;
+  margin: 30 0 0 0;
+}
+
+b {
+  color: black;
+}
+
+p {
+  color: black;
+}
+
+button {
+  margin: 10px;
 }
 
 .inner {
-  border-style: solid;
+  width:500px;
+  height: 250px;
+  border-style: none;
   border-width: 1px;
-  background-color: red;
+  background-color: transparent;
   border-radius: 20px;
-  padding: 10px;
-  margin: 20px;
+  padding: 15px;
+  margin: 0 auto;
+  color: #281934;
 }
 
 .inner h3{
@@ -26,7 +218,60 @@ h1 {
 .inner h4{
   font-size: 16px;
   font-style: bold;
+  color: #281934;
+}
+
+.inner li{
+  color: #281934;
+  font-weight: bold;
+}
+
+.inner li audio{
+  width: 45px;
+  background-color: transparent;
+}
+
+.inner a {
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+
+.inneradministration {
+  width:500px;
+  height: 250px;
+  border-style: none;
+  border-width: 1px;
+  background-color: gray;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 0 auto;
   color: black;
+}
+
+.inneradministration h3{
+  font-size: 14px;
+}
+
+.inneradministration h4{
+  font-size: 16px;
+  font-style: bold;
+  color: #281934;
+}
+
+.inneradministration li{
+  color: #281934;
+  font-weight: bold;
+}
+
+.inneradministration li audio{
+  width: 45px;
+  background-color: transparent;
+}
+
+.inneradministration a {
+  text-decoration: underline;
+  font-weight: normal;
 }
 
 ul li{
@@ -45,7 +290,40 @@ ul li a{
 
 }
 
-.banddiv img {
-width: 100px;
-height: auto;
+
+
+#show {
+  width: 25px;
+  height: 25px;
+  background-size:cover;
+}
+
+table#amend img{
+  width: 25px;
+  height: 25px;
+  background-size:cover;
+}
+
+.form {
+  background-color: gray;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.field {
+  color: black;
+  background-color: gray;
+}
+
+.fields {
+  color: black;
+  background-color: #CFCFCF;
+  text-align: left; 
+  padding: 5px;
+}
+
+
+.fields input{
+
 }

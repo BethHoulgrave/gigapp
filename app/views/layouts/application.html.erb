@@ -1,25 +1,22 @@
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>jQuery UI Accordion - Default functionality</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-  // <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-  <script>
-  $(function() {
-    $( "#accordion" ).accordion();
-  });
-  </script>
-</head>
-<body>
-  <!-- FIXED LAYOUT IN BOOTSTRAP -->
-  <div id="container">
-    <div class="row">
-      <div class="span3"></div>
-      
-      <div class="span6"></div>
+  <head>
+    <meta charset="utf-8">
+    <title>Gig App</title>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script>
+      $(function() {
+        $( "#accordion" ).accordion();
+      });
+    </script>
+  </head>
+  <body>
+    <!-- FIXED LAYOUT IN BOOTSTRAP -->
+    <div id="container">
+      <div class="row">
         <div class="user-nav">
           <% if user_signed_in? %>
             Logged in as
@@ -37,10 +34,13 @@
         </div>
         <% flash.each do |name, msg| %>
           <%= content_tag :div, msg, :id => "flash_#{name}" %>
+
+          <img id= "logo" src="logo_green.png">
         <% end %>
         <%= yield %>
       </div>
 
-      <div class="span3"></div>
-  </div>
-</body>
+      <%= yield :center %>
+    </div>
+  </body>
+</html>
