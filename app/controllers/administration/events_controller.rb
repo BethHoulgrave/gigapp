@@ -1,6 +1,6 @@
 class Administration::EventsController < ApplicationController
 def index
-    events = Event.order(:date)
+    events = current_user.events.order(:date)
     @events = events.group_by(&:date)
     @bandarray = []
     @lineup = []

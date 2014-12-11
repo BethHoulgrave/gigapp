@@ -1,10 +1,13 @@
 <% content_for :center do %>
-  <h1>Listing events</h1>
+  <h1>Local Events</h1>
 
   <br />
-  <%= link_to 'New Event', new_event_path %>
+  <button><%= link_to 'New Event', new_event_path %></button>
   <br />
 
+  <button><%= link_to 'My Event Calendar', administration_events_path %></button>
+  <br />
+  
   <div id="accordion" class="col-md-2-offset">
     <% @events.each do | date, events | %>
       <h3><%= date %> </h3>
@@ -47,12 +50,6 @@
                   <li><%= event.category_id %></li>
                 </ul>
               </div>
-
-              <% if user_signed_in? %>
-                <%= render :partial => 'tooltable', locals: {event: event} %>
-              <% end %>
-
-
             </div>
 
             <div id="visualiser">

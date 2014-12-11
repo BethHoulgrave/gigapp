@@ -1,4 +1,4 @@
-@import "twitter/bootstrap/bootstrap";
+/*@import "twitter/bootstrap/bootstrap";
 @import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
@@ -13,7 +13,7 @@
 @fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
 
 // Font Awesome
-@import "fontawesome/font-awesome";
+@import "fontawesome/font-awesome";*/
 
 // Glyphicons
 //@import "twitter/bootstrap/sprites.less";
@@ -28,3 +28,8 @@
 //
 // Example:
 // @linkColor: #ff0000;
+
+.ui-widget-content {
+  background: transparent !important;
+}
+

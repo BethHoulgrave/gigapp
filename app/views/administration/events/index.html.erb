@@ -1,16 +1,19 @@
 <% content_for :center do %>
-  <h1>Listing events</h1>
+  <h1><%= current_user.name %>'s Calendar</h1>
 
   <br />
-  <%= link_to 'New Event', new_event_path %>
+  <button><%= link_to 'New Event', new_event_path %></button>
   <br />
 
-  <div id="accordion" class="col-md-2-offset">
+  <button><%= link_to 'All events', events_path %></button>
+  <br />
+
+  <div id="userevents">
     <% @events.each do | date, events | %>
       <h3><%= date %> </h3>
       <div>
       <% events.each do |event| puts%>
-        <div class="inner">
+        <div class="inneradministration">
           <%#=event.inspect%>
 
           <% @bandarray = [] %>

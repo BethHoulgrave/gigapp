@@ -5,7 +5,7 @@
 
 body {
   padding: 0px;
-  background-image: url("blue_ink.jpg");
+  background-image: url("background_pink.jpg");
   background-size:cover; 
 }
 
@@ -16,6 +16,7 @@ body {
   border-width: 1px;
   border-style: solid;
   border-color: gray;
+  background-color: transparent;
 }
 
 #bandimagecontainer {
@@ -162,7 +163,7 @@ body {
 }
 
 #accordion div.ui-accordion-content{
-  background-color: tomato;
+  background-color: transparent;
   // height: 1500px;
   // height: auto;
   // display: block;
@@ -173,9 +174,16 @@ body {
   background-color: blue;
 }
 
+#userevents {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
 h1 {
   text-align: center;
-  color: gray;
+  color: #1527A5;
   margin: 30 0 0 0;
 }
 
@@ -187,6 +195,10 @@ p {
   color: black;
 }
 
+button {
+  margin: 10px;
+}
+
 .inner {
   width:500px;
   height: 250px;
@@ -195,8 +207,8 @@ p {
   background-color: transparent;
   border-radius: 20px;
   padding: 15px;
-  margin: 10px;
-  color: black;
+  margin: 0 auto;
+  color: #281934;
 }
 
 .inner h3{
@@ -206,11 +218,11 @@ p {
 .inner h4{
   font-size: 16px;
   font-style: bold;
-  color: black;
+  color: #281934;
 }
 
 .inner li{
-  color: black;
+  color: #281934;
   font-weight: bold;
 }
 
@@ -220,6 +232,44 @@ p {
 }
 
 .inner a {
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+
+.inneradministration {
+  width:500px;
+  height: 250px;
+  border-style: none;
+  border-width: 1px;
+  background-color: gray;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 0 auto;
+  color: black;
+}
+
+.inneradministration h3{
+  font-size: 14px;
+}
+
+.inneradministration h4{
+  font-size: 16px;
+  font-style: bold;
+  color: #281934;
+}
+
+.inneradministration li{
+  color: #281934;
+  font-weight: bold;
+}
+
+.inneradministration li audio{
+  width: 45px;
+  background-color: transparent;
+}
+
+.inneradministration a {
   text-decoration: underline;
   font-weight: normal;
 }
