@@ -6,6 +6,10 @@ GigApp::Application.routes.draw do
   # resources :users, :only=>[:show]
   resources :events
 
+  namespace :administration do
+    resources :events
+  end
+
   # get 'users/:id' => 'users#show'
 
   # The priority is based upon order of creation:

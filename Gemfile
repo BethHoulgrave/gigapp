@@ -18,6 +18,8 @@ gem 'devise'
 
 gem 'carrierwave', '0.9.0'
 
+gem 'cancan'
+
 
 
 # Gems used only for assets and not required
