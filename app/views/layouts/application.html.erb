@@ -38,10 +38,11 @@
         <% flash.each do |name, msg| %>
           <%= content_tag :div, msg, :id => "flash_#{name}" %>
 
-          <img id= "logo" src="logo_green.png">
         <% end %>
         <%= yield %>
       </div>
+
+      <img id= "logo" src="assets/logo_gigantic.png">
 
       <%= yield :center %>
     </div>
