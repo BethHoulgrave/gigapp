@@ -48,6 +48,10 @@
                 </ul>
               </div>
 
+              <%# if user_signed_in? %>
+                <%#= render 'shared/userinfo' %>
+              <%# end %>
+
               <div id="toolbox">
                 <table id="amend">
                   <td><%= link_to image_tag("show.png"), event %></td>

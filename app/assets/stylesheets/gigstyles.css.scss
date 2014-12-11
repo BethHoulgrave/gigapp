@@ -5,6 +5,8 @@
 
 body {
   padding: 0px;
+  background-image: url("blue_ink.jpg");
+  background-size:cover; 
 }
 
 #container {
@@ -37,16 +39,22 @@ body {
   display: inline-block;
   float: left;
   margin-right: 15px;
+  padding: 4px;
+  background-color: transparent;
 }
 
 #lineup {
   float: left;
-
+  opacity: 1;
+  text-align: left;
 }
 
 #lineup p {
   display: inline;
-  margin: 5px;
+  margin-left: 8px;
+  font-family: helvetica;
+  color: white;
+  text-align: left;
 }
 
 #lineup hr {
@@ -141,6 +149,10 @@ body {
   height: 50px;
 }
 
+.user-nav b {
+  color: white;
+}
+
 
 #accordion {
   width: 100%;
@@ -178,9 +190,9 @@ p {
 .inner {
   width:500px;
   height: 250px;
-  border-style: solid;
+  border-style: none;
   border-width: 1px;
-  background-color: #C4C8CC;
+  background-color: transparent;
   border-radius: 20px;
   padding: 15px;
   margin: 10px;
