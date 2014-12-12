@@ -16,7 +16,7 @@
   
   <div id="accordion" class="col-md-2-offset">
     <% @events.each do | date, events | %>
-      <h3><%= date %> </h3>
+      <h3><%= date.strftime('%A %e %b') %> </h3>
       <div>
       <% events.each do |event| puts%>
         <div class="inner">

@@ -8,8 +8,8 @@
       <div id="neweventbutton">
         <button><%= link_to 'New Event', new_event_path %></button>
       </div>
-      <div id="calendarbutton">
-        <button><%= link_to 'My Event Calendar', administration_events_path %></button>
+      <div id="allevents">
+        <button><%= link_to 'All Events', events_path %></button>
       </div>
     </div>
   <% end %>
@@ -17,7 +17,7 @@
   <div id="userevents">
     <% @events.each do | date, events | %>
       <div id="headerreplacement">
-        <h3><%= date %> </h3>
+        <h3><%= date.strftime('%A %e %b') %> </h3>
       </div>
       <div>
       <% events.each do |event| puts%>
