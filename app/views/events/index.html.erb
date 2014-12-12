@@ -1,14 +1,18 @@
 <% content_for :center do %>
-  <h1>Local Events</h1>
-
-  <div class="userbuttons">
-    <div id="neweventbutton">
-      <button><%= link_to 'New Event', new_event_path %></button>
-    </div>
-    <div id="calendarbutton">
-      <button><%= link_to 'My Event Calendar', administration_events_path %></button>
-    </div>
+  <div id="headingimg">
+    <img src='assets/localevents.png'>
   </div>
+
+  <% if user_signed_in? %>
+    <div class="userbuttons">
+      <div id="neweventbutton">
+        <button><%= link_to 'New Event', new_event_path %></button>
+      </div>
+      <div id="calendarbutton">
+        <button><%= link_to 'My Event Calendar', administration_events_path %></button>
+      </div>
+    </div>
+  <% end %>
   
   <div id="accordion" class="col-md-2-offset">
     <% @events.each do | date, events | %>

@@ -1,16 +1,24 @@
 <% content_for :center do %>
-  <h1><%= current_user.name %>'s Calendar</h1>
+  <div id="headingimg">
+    <img src='assets/mycalendar.png'>
+  </div>
 
-  <br />
-  <button><%= link_to 'New Event', new_event_path %></button>
-  <br />
-
-  <button><%= link_to 'All events', events_path %></button>
-  <br />
+    <% if user_signed_in? %>
+    <div class="userbuttons">
+      <div id="neweventbutton">
+        <button><%= link_to 'New Event', new_event_path %></button>
+      </div>
+      <div id="calendarbutton">
+        <button><%= link_to 'My Event Calendar', administration_events_path %></button>
+      </div>
+    </div>
+  <% end %>
 
   <div id="userevents">
     <% @events.each do | date, events | %>
-      <h3><%= date %> </h3>
+      <div id="headerreplacement">
+        <h3><%= date %> </h3>
+      </div>
       <div>
       <% events.each do |event| puts%>
         <div class="inneradministration">
@@ -79,37 +87,5 @@
     </div>
     <% end %> 
   </div>
-
-
-<!-- FORM -->
-
-<!-- <h2>Listing events</h2>
-<%# if current_user.present? %>
-    <div class = "event_form">
-      <p>Bouquet Name:</p>
-      <input type='text' id='bouquet_name'>
-      <p>Bouquet Price:</p>
-      <input type='float' id='price'>
-      <p>Bouquet Description:</p>
-      <input type='text' id='bouquet_description'>
-      <p>Number of Bouquets:</p>
-      <input type='integer' id='number_bouquets'>
-      </br>
-      </br>
-      <input type='submit' value='submit' class='bouquet_submit'>
-    </div>
-  <%# end %>
-<%# end %>
-
-<div id = "listbouquets"></div>
-<br />
-
-<%#= link_to 'New Bouquet', new_bouquet_path %> -->
-
-<!-- FORM END -->
-
-
-
-
 
 <% end %>
